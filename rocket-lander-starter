@@ -1,0 +1,175 @@
+include image
+include shared-gdrive("Rocket Lander (background)", "1gF4GvcpTnLtF0WGaYpleT12z3hlPfKu1")
+
+#######################
+# Images / Parameters #
+#######################
+MARS = image-url("https://drive.google.com/uc?export=download&id=1fCcB6IuEUJN3JNsksDE0gtCAXc7-Qw_5")
+ROCKET = scale(0.2,image-url("https://code.pyret.org/shared-image-contents?sharedImageId=1npNv8bo_6cSn-s0x_I3PtMAVoXtsUDtJ"))
+
+mass = 533    # kg
+vx-init = 35  # m/s
+gfs = -3.711  # N/kg
+
+
+############
+#  Unit 2  #
+######################################################################
+# Add your two-argument next-x function, along with its contract     #
+# and examples. THEN in the last line, change default-next-x to      #
+# next-x. Confirm that the rocket moves in the way you expect.       #
+######################################################################
+
+
+
+
+
+######################################################################
+# Your lander has probably drifted across the window and off of      #
+# the right side of the screen!                                      #
+#                                                                    #
+# Design a function called is-onscreen-x which consumes the          #
+# lander's current x position and returns true whenever the          #
+# lander's current x position is actually visible on screen.         #
+#                                                                    #
+# THEN in the last line, change default-is-onscreen-x to             #
+# is-onscreen-x. Confirm the rocket stays on screen (and returns)    #
+# in the way that you expect.                                        #
+######################################################################
+#|
+is-onscreen-x :: ... -> ...
+#Add Purpose Statement here
+
+
+
+# These examples should evaluate to true because the expression evaluates to true
+examples "is-onscreen-x is true":
+  is-onscreen-x(...) is ... because ...
+  ...
+end
+
+# These examples should evaluate to false because the expression evaluates to false
+examples "is-onscreen-x is false":
+  is-onscreen-x(...) is ... because ...
+  ...
+end
+
+fun is-onscreen-x(...):
+  ...
+end
+|#
+
+
+############
+#  Unit 3  #
+######################################################################
+# Add your next-y and next-vy functions from the lunar drop sim.     #
+# THEN in the last line, change default-next-y and default-next-vy   #
+# to next-y and next-vy, respectively. Confirm the rocket moves in   #
+# the way you expect.                                                #
+######################################################################
+
+
+
+
+
+
+############
+#  Unit 4  #
+######################################################################
+# Design a function called game-status that consumes the current     #
+# x-position, the current y-position, and the current y-velocity,    #
+# and produces a statement describing the current condition of       #
+# the rocket: flying, safely landed, or crash landed.                #
+#                                                                    #
+#                                                                    #
+# NOTE: You can call a pre-defined function called ground-height,    #
+# which consumes the current x-position and produces the height      #
+# of the ground at that x-position (aka, elevation of the ground).   #
+#                                                                    #
+# THEN, in the last line, change default-game-status to game-status. #
+# Confirm the game status changes in all of the ways you expect.     #
+######################################################################
+
+
+
+
+
+
+
+
+############
+#  Unit 5  #
+####################################################################
+# Design a function called sum-of-forces that consumes the rocket  #
+# thrust, and produces the total force on the rocket due to both   #
+# the thrust and the gravitational field.                          #
+#                                                                  #
+# THEN, in the last line, change default-sum-of-forces to          #
+# to sum-of-forces.                                                #
+####################################################################
+
+
+
+
+
+
+
+
+
+
+
+####################################################################
+# Design a function called a-from-f that consumes a Number         #
+# (the current sum of the forces on the rocket), and produces      #
+# the rocket's current acceleration.                               #
+#                                                                  #
+# THEN, in the last line, change default-a-from-f to a-from-f.     #
+####################################################################
+
+
+
+
+
+
+
+
+####################################################################
+# Design a function called thrust-from-key that consumes the       #
+# current thrust and the name of a key pressed by the player,      #
+# and, depending on the key pressed, produces a positive change    #
+# in the thrust, a negative change in the thrust, or no change in  #
+# the thrust at all.                                               #
+#                                                                  #
+# THEN, in the last line, change default-thrust-from-key to        #
+# thrust-from-key. Confirm the game works the way you intend.      #
+####################################################################
+
+
+
+
+
+
+
+
+
+
+
+####################################################################
+#CONGRATULATIONS! You've finished building your Rocket Lander game!# 
+####################################################################
+
+
+make-lander(
+  MARS, ROCKET, # IMAGES
+  mass, vx-init, gfs, # PARAMETERS
+  
+  # swap your functions here!
+  default-next-x, 
+  default-is-onscreen-x, 
+  default-next-y, 
+  default-next-vy,
+  default-a-from-f,
+  default-thrust-from-key,
+  default-sum-of-forces, 
+  default-game-status)
